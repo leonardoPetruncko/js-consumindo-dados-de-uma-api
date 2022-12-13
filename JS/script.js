@@ -1,7 +1,8 @@
 async function buscaEndereço() {
 const consultaCEP = await fetch('https://viacep.com.br/ws/01001000/json/')
+const consultaCEPConvertida = await consultaCEP.json()
 
-    console.log(consultaCEP)
+    console.log(consultaCEPConvertida)
 }
 
 buscaEndereço()
