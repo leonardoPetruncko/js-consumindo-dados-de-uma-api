@@ -1,15 +1,13 @@
-async function buscaEndereço() {
+async function buscaEndereço(cep) {
     try {
-        const consultaCEP = await fetch('https://viacep.com.br/ws/01001250/json/')
-        const consultaCEPConvertida = await consultaCEP.json()
-
+        var consultaCEP = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        var consultaCEPConvertida = await consultaCEP.json()
         if (consultaCEPConvertida.erro) {
             throw Error('CEP não existente!')
         }
         console.log(consultaCEPConvertida)
+        return consultaCEPConvertida
     } catch (erro) {
         console.log(erro)
     }
 }
-
-buscaEndereço()
