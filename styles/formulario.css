@@ -75,3 +75,10 @@
     line-height: 18px;
     color: var(--vermelho);
 }
+
+p {
+    font-size: 1em;
+    font-weight: 700;
+    margin: 10px;
+    color: red;
+}
